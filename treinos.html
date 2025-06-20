@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Check-in de Treino</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Check-in Diário 🏋️‍♀️</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="tempo.html">Tempo Juntos</a>
+    <a href="fotos.html">Fotos</a>
+    <a href="treinos.html">Treinos</a>
+    <a href="cartinhas.html">Cartinhas</a>
+    <a href="metas.html">Metas</a>
+</nav>
+
+<audio id="audio" src="audio/musica.mp3" loop></audio>
+<button id="playPause" class="audio-button">🔊 Tocar Música</button>
+
+  <main class="container">
+    <form class="form-box">
+      <label>📆 Data:</label>
+      <input id="data" type="date" class="input">
+
+      <h3>🧃 Hidratação</h3>
+      <input id="agua" placeholder="Quantidade (ex: 2L)" class="input">
+      <select id="aguaStatus" class="select">
+        <option value="✅">✅</option>
+        <option value="❎">❎</option>
+      </select>
+
+      <h3>🏃‍♂️ Exercício (20-30min)</h3>
+      <textarea id="exercicio" placeholder="Descreva..." class="textarea"></textarea>
+      <select id="exercicioStatus" class="select">
+        <option value="✅">✅</option>
+        <option value="❎">❎</option>
+      </select>
+
+      <label>Resultado (ex.: 0/0)</label>
+      <input id="resultado" class="input">
+
+      <h3>🍽️ Alimentação do Dia</h3>
+      <label>Café da Manhã</label>
+      <input id="cafeHora" placeholder="Hora (ex: 8h30)" class="input">
+      <select id="cafeStatus" class="select"><option>✅</option><option>❎</option></select>
+      <input id="cafeDescricao" placeholder="O que comeu?" class="input">
+
+      <label>Almoço</label>
+      <input id="almocoHora" placeholder="Hora" class="input">
+      <select id="almocoStatus" class="select"><option>✅</option><option>❎</option></select>
+      <input id="almocoDescricao" placeholder="O que comeu?" class="input">
+
+      <label>Jantar</label>
+      <input id="jantarHora" placeholder="Hora" class="input">
+      <select id="jantarStatus" class="select"><option>✅</option><option>❎</option></select>
+      <input id="jantarDescricao" placeholder="O que comeu?" class="input">
+
+      <label>Lanche</label>
+      <input id="lancheHora" placeholder="Hora" class="input">
+      <select id="lancheStatus" class="select"><option>✅</option><option>❎</option></select>
+      <input id="lancheDescricao" placeholder="O que comeu?" class="input">
+
+      <h3>🔎 Fugiu da dieta?</h3>
+      <select id="deslizeStatus" class="select"><option>✅</option><option>❎</option></select>
+      <textarea id="deslizeTexto" placeholder="O que aconteceu?" class="textarea"></textarea>
+
+      <h3>🧠 Humor / Emoções</h3>
+      <input id="humor" placeholder="Como se sentiu?" class="input">
+
+      <h3>📣 Comentário do Dia</h3>
+      <textarea id="comentario" class="textarea"></textarea>
+
+      <h3>🎯 Objetivo da Semana</h3>
+      <textarea id="objetivo" class="textarea"></textarea>
+
+      <button type="button" onclick="gerarResumo()" class="button">Gerar Resumo</button>
+    </form>
+
+    <section class="output-box">
+      <h2>📋 Resumo</h2>
+      <pre id="resumo" class="resumo-box"></pre>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
