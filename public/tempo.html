@@ -29,6 +29,54 @@
 <audio id="audio" src="audio/musica.mp3" loop></audio>
 <button id="playPause" class="audio-button">🔊 Tocar Música</button>
 
+<script>
+const audio = document.getElementById('audio');
+const playPauseBtn = document.getElementById('playPause');
+let isPlaying = false;
+
+playPauseBtn.addEventListener('click', () => {
+    if (isPlaying) {
+        audio.pause();
+        playPauseBtn.textContent = '🔇 Tocar Música';
+    } else {
+        audio.play();
+        playPauseBtn.textContent = '🔊 Pausar Música';
+    }
+    isPlaying = !isPlaying;
+});
+</script>
+
+
 <script src="script.js"></script>
+
+<script>
+    function calcularTempoJuntos() {
+        const dataInicio = new Date(2024, 11, 15);
+        const hoje = new Date();
+    
+        let anos = hoje.getFullYear() - dataInicio.getFullYear();
+        let meses = hoje.getMonth() - dataInicio.getMonth();
+        let dias = hoje.getDate() - dataInicio.getDate();
+    
+        if (dias < 0) {
+            meses--;
+            const mesAnterior = new Date(hoje.getFullYear(), hoje.getMonth(), 0);
+            dias += mesAnterior.getDate();
+        }
+    
+        if (meses < 0) {
+            anos--;
+            meses += 12;
+        }
+    
+        const texto = `${anos} ano${anos !== 1 ? 's' : ''}, ${meses} mese${meses !== 1 ? 's' : ''} e ${dias} dia${dias !== 1 ? 's' : ''} juntos! 💖`;
+    
+        document.getElementById('contador').textContent = texto;
+    }
+    
+    calcularTempoJuntos();
+    setInterval(calcularTempoJuntos, 1000 * 60 * 60 * 24);
+    </script>
+    
 </body>
 </html>

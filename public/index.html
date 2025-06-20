@@ -7,82 +7,102 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Nosso Cantinho 💜🤍</h1>
+    </header>
 
-    <!-- Área de Login - Inicialmente visível, o JS vai esconder quando logado -->
-    <div id="login-area">
-        <h2>Acesso ao Nosso Cantinho</h2>
-        <div>
-            <label for="emailInput">Email:</label><br>
-            <input type="email" id="emailInput" placeholder="seu.email@exemplo.com">
-        </div>
-        <div>
-            <label for="passwordInput">Senha:</label><br>
-            <input type="password" id="passwordInput" placeholder="Sua senha">
-        </div>
-        <button id="loginButton">Entrar</button>
-        <!-- Opcional: Adicionar um botão ou link para cadastro se quiser permitir criar contas pelo site -->
-        <!-- <button id="registerButton">Cadastrar</button> -->
-        <p>Use o email e senha que vocês cadastraram no Firebase.</p>
-    </div>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="tempo.html">Tempo Juntos</a>
+        <a href="fotos.html">Fotos</a>
+        <a href="treinos.html">Treinos</a>
+        <a href="cartinhas.html">Cartinhas</a>
+        <a href="metas.html">Metas</a>
+    </nav>
 
-    <!-- Botão de Sair - Inicialmente escondido, o JS vai mostrar quando logado -->
-    <button id="signOutBtn" style="display: none;">Sair</button>
-
-    <!-- Conteúdo principal do site - Inicialmente escondido, o JS vai mostrar quando logado e autorizado -->
-    <div id="content" style="display: none;">
-        <p>Bem-vindo ao Nosso Cantinho! Você está logado.</p>
-        <!-- Aqui virá o conteúdo interativo que só aparece para vocês -->
-
-        <!-- MANTIDO O CONTEÚDO ORIGINAL DENTRO DO #content, POIS ELE SÓ APARECE QUANDO LOGADO -->
-        <header>
-            <h1>Nosso Cantinho 💜🤍</h1>
-        </header>
-
-        <nav>
-            <a href="index.html">Início</a>
-            <!-- Certifique-se de que as outras páginas também implementam autenticação se necessário -->
-            <a href="tempo.html">Tempo Juntos</a>
-            <a href="fotos.html">Fotos</a>
-            <a href="treinos.html">Treinos</a>
-            <a href="cartinhas.html">Cartinhas</a>
-            <a href="metas.html">Metas</a>
-        </nav>
-
-        <main>
+    <main>
+        <section class="intro">
             <h2>Bem-vindos ao nosso espaço! ✨</h2>
             <p>Esse é um cantinho feito especialmente para nós dois. Aqui podemos acompanhar nosso tempo juntos, nossos treinos, guardar memórias, fotos, cartinhas e nossos sonhos. 💖</p>
-        </main>
-
-        <!-- Outros elementos que fazem parte do conteúdo logado, como o contador de dias, podem vir aqui -->
-        <!-- No seu script.js, o código do contador já está lá, só precisa garantir que ele rode quando o #content é mostrado -->
-        <div id="contador">Carregando tempo juntos...</div>
-
-
-        <!-- A seção de Resumo diário que você tinha no script pode ter os campos aqui dentro do #content -->
-        <!-- Exemplo BÁSICO dos inputs, você deve estilizar e organizar melhor -->
-        <section>
-            <h3>Check-in Diário</h3>
-            <div>
-                <label for="data">Data:</label>
-                <input type="date" id="data">
-            </div>
-             <!-- Adicionar todos os outros inputs do seu formulário de resumo aqui -->
-            <button onclick="gerarResumo()">Gerar Resumo (Salvar no Futuro)</button>
-            <pre id="resumo"></pre> <!-- Onde o resumo gerado aparece -->
         </section>
 
+        <section class="mural">
+            <h2>💌 Nosso Mural de Memórias 💌</h2>
 
-    </div> <!-- Fim da div #content -->
+            <div class="mural-card">
+                <h3>🌟 Onde Tudo Começou</h3>
+                <p>Lembro como se fosse ontem kkkkk, eu nunca pensei que uma simples mensagem no direct do instagram seria o primeiro passo da melhor decisão que eu tive em toda minha vida, de um simples "Eai" pra uma história linda de amor💜</p>
+                <img src="img/pic1.jpg" alt="Nossa primeira foto juntos">
+                <p>Nós falávamos como robôs como você sempre diz quando vemos essas mensagens kkkkkk</p>
+                <img src="img/pic2.jpg" alt="Cantada">
+                <p>Aqui eu admito que tava com o c* na mão de você não gostar, mas eu queria demonstrar que te achei linda e que eu tinha interesse em te conhecer mais, uma escolha e tanto viu? Zero arrependimentos, e se você quer saber, eu não poderia estar mais feliz com o desenrolar dessa mensagem... 💍💜</p>
+                <img src="img/pic5.jpg" alt="Te Amo">
+                <p>O primeiro "Eu te amo dms Lu", é estranho até te chamar de Lu agora kkkkkkkkk, mas nesse dia foi a primeira vez em ANOS que eu chorei de felicidade</p>
+            </div>
 
-    <!-- O áudio e o botão de controle podem ficar fora do #content se quiser que toque mesmo antes do login,
-         ou dentro se quiser que só toque para quem está logado. Deixei fora por enquanto. -->
+            <div class="mural-card">
+                <h3>O Primeiro Encontro ✨</h3>
+                <p>Quando eu te vi descendo daquele carro eu senti algo que nunca havia sentido antes kkkkk, depois de conversar e desenvolver sentimentos um pelo outro lá estávamos nós, cara a cara um com o outro, eu com medo de fazer algo errado e você com muita vergonha porque nunca esteve em um encontro antes, nós dois tínhamos muita pouca experiência, mas deixamos a mercê do destino e apesar da enorme timidêz, tivemos nosso primeiro jantar naquela lanchonete (inclusive o Gian me deixou comer sozinho basicamente, fdp) mas isso é irrelevante, oque importa é oque vem depois 🤍</p>
+                <img src="img/pic3.jpg" alt="Batata">
+            </div>
+
+            <div class="mural-card">
+                <h3>💋 Nosso Primeiro Beijo</h3>
+                <p>Eu estava nos céus kkkkkkk, naquele momento eu não teria palavras pra descrever o que senti, meu corpo estava leve, pra mim aquele momento foi um marco na minha vida... Nunca vou esquecer. 🤍</p>
+                <img src="img/pic4.jpg" alt="Primeiro beijo">
+            </div>
+
+            <div class="mural-card">
+                <h3>🎂 Datas Que Nunca Esquecemos</h3>
+                <ul>
+                    <li>💖 22/11/2024 — Nosso primeiro "Eu te amo"</li>
+                    <li>🤍 25/11/2024 — Primeiro encontro oficial</li>
+                    <li>💍 15/12/2024 — O dia que tudo começou</li>
+                </ul>
+            </div>
+
+            <div class="mural-card">
+                <h3>📸 Alguns Momentos Nossos</h3>
+                <div class="galeria">
+                    <img src="img/pic4.jpg" alt="Foto nossa">
+                    <img src="img/pic6.jpg" alt="Foto nossa">
+                    <img src="img/pic7.jpg" alt="Foto nossa">
+                    <img src="img/pic8.jpg" alt="Foto nossa">
+                    <img src="img/pic9.jpg" alt="Foto nossa">
+                    <img src="img/pic10.jpg" alt="Foto nossa">
+                    <img src="img/pic11.jpg" alt="Foto nossa">
+                    <img src="img/pic12.jpg" alt="Foto nossa">
+                    <img src="img/pic13.jpg" alt="Foto nossa">
+                </div>
+            </div>
+
+            <div class="mural-card">
+                <h3>🔮 Nosso Futuro</h3>
+                <p>Que a gente continue construindo uma história linda, cheia de amor, carinho e muitos sonhos realizados. ✨💑</p>
+            </div>
+        </section>
+    </main>
+
     <audio id="audio" src="audio/musica.mp3" loop></audio>
     <button id="playPause" class="audio-button">🔊 Tocar Música</button>
-
-
-    <!-- SEU PRÓPRIO SCRIPT - AGORA CARREGADO COMO MÓDULO -->
-    <!-- Ele fará os imports dos SDKs do Firebase que precisa -->
-    <script type="module" src="script.js"></script>
+    
+    <script>
+    const audio = document.getElementById('audio');
+    const playPauseBtn = document.getElementById('playPause');
+    let isPlaying = false;
+    
+    playPauseBtn.addEventListener('click', () => {
+        if (isPlaying) {
+            audio.pause();
+            playPauseBtn.textContent = '🔇 Tocar Música';
+        } else {
+            audio.play();
+            playPauseBtn.textContent = '🔊 Pausar Música';
+        }
+        isPlaying = !isPlaying;
+    });
+    </script>
+    
 
 </body>
 </html>

@@ -26,16 +26,34 @@
         <ul>
             <li>💪 Completar todos os treinos da semana</li>
             <li>🍎 Manter a alimentação saudável juntos</li>
-            <li>✈️ Fazer nossa primeira viagem juntos</li>
-            <li>🎮 Jogar aquele jogo que combinamos</li>
             <li>💖 Continuar cuidando, apoiando e amando um ao outro todos os dias</li>
             <li>🏡 Construir muitos sonhos lado a lado</li>
+            <li>😣 Não furar nossa dieta(é dificil amor eu seikkkk)</li>
+            <li>💍 Comprar a nossa nova aliança</li>
         </ul>
     </section>
 </main>
 
 <audio id="audio" src="audio/musica.mp3" loop></audio>
 <button id="playPause" class="audio-button">🔊 Tocar Música</button>
+
+<script>
+const audio = document.getElementById('audio');
+const playPauseBtn = document.getElementById('playPause');
+let isPlaying = false;
+
+playPauseBtn.addEventListener('click', () => {
+    if (isPlaying) {
+        audio.pause();
+        playPauseBtn.textContent = '🔇 Tocar Música';
+    } else {
+        audio.play();
+        playPauseBtn.textContent = '🔊 Pausar Música';
+    }
+    isPlaying = !isPlaying;
+});
+</script>
+
 
 <script src="script.js"></script>
 </body>

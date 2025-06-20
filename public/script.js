@@ -38,31 +38,6 @@ if (btnAudio) { // Adicionado verificação para garantir que o elemento existe
   });
 }
 
-
-// ⏰ Contador de tempo juntos (SEU CÓDIGO ORIGINAL) - Pode manter aqui
-const contador = document.getElementById('contador');
-
-if (contador) { // Adicionado verificação
-    const dataInicio = new Date(2024, 11, 15); // mês começa em 0 (11 = dezembro)
-    const hoje = new Date();
-    const diff = hoje.getTime() - dataInicio.getTime(); // Use getTime() para diferença em ms
-
-    const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-    contador.innerText = `${dias} dias juntos 💜`;
-}
-
-// Funções para o "resumo" - Pode manter aqui, mas a parte de SALVAR no DB virá depois
-function gerarResumo() {
-    // ... (seu código de coletar dados dos inputs) ...
-    const resumo = `...`; // Seu resumo gerado
-
-    document.getElementById("resumo").innerText = resumo;
-    // --- PRÓXIMO PASSO: CHAMAR A FUNÇÃO DE SALVAR NO DB AQUI! ---
-}
-// --- ADICIONAR EVENT LISTENER PARA CHAMAR gerarResumo() QUANDO PREENCHER O FORM ---
-
-
 // 4. Funções de Autenticação usando o SDK Modular
 function cadastrarUsuario(email, password) {
     createUserWithEmailAndPassword(auth, email, password) // Usando a referência 'auth' e a função modular

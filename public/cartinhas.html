@@ -38,6 +38,24 @@
 <audio id="audio" src="audio/musica.mp3" loop></audio>
 <button id="playPause" class="audio-button">🔊 Tocar Música</button>
 
+<script>
+const audio = document.getElementById('audio');
+const playPauseBtn = document.getElementById('playPause');
+let isPlaying = false;
+
+playPauseBtn.addEventListener('click', () => {
+    if (isPlaying) {
+        audio.pause();
+        playPauseBtn.textContent = '🔇 Tocar Música';
+    } else {
+        audio.play();
+        playPauseBtn.textContent = '🔊 Pausar Música';
+    }
+    isPlaying = !isPlaying;
+});
+</script>
+
+
 <script src="script.js"></script>
 
 

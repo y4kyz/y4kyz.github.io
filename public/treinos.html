@@ -7,6 +7,7 @@
   <title>Check-in de Treino</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
     <h1>Check-in Diário 🏋️‍♀️</h1>
@@ -20,9 +21,6 @@
     <a href="cartinhas.html">Cartinhas</a>
     <a href="metas.html">Metas</a>
 </nav>
-
-<audio id="audio" src="audio/musica.mp3" loop></audio>
-<button id="playPause" class="audio-button">🔊 Tocar Música</button>
 
   <main class="container">
     <form class="form-box">
@@ -89,6 +87,90 @@
     </section>
   </main>
 
+  <audio id="audio" src="audio/musica.mp3" loop></audio>
+  <button id="playPause" class="audio-button">🔊 Tocar Música</button>
+  
+  <script>
+  const audio = document.getElementById('audio');
+  const playPauseBtn = document.getElementById('playPause');
+  let isPlaying = false;
+  
+  playPauseBtn.addEventListener('click', () => {
+      if (isPlaying) {
+          audio.pause();
+          playPauseBtn.textContent = '🔇 Tocar Música';
+      } else {
+          audio.play();
+          playPauseBtn.textContent = '🔊 Pausar Música';
+      }
+      isPlaying = !isPlaying;
+  });
+  </script>
+
+<script>
+  function gerarResumo() {
+    const data = document.getElementById('data').value;
+    const agua = document.getElementById('agua').value;
+    const aguaStatus = document.getElementById('aguaStatus').value;
+    const exercicio = document.getElementById('exercicio').value;
+    const exercicioStatus = document.getElementById('exercicioStatus').value;
+    const resultado = document.getElementById('resultado').value;
+  
+    const cafeHora = document.getElementById('cafeHora').value;
+    const cafeStatus = document.getElementById('cafeStatus').value;
+    const cafeDescricao = document.getElementById('cafeDescricao').value;
+  
+    const almocoHora = document.getElementById('almocoHora').value;
+    const almocoStatus = document.getElementById('almocoStatus').value;
+    const almocoDescricao = document.getElementById('almocoDescricao').value;
+  
+    const jantarHora = document.getElementById('jantarHora').value;
+    const jantarStatus = document.getElementById('jantarStatus').value;
+    const jantarDescricao = document.getElementById('jantarDescricao').value;
+  
+    const lancheHora = document.getElementById('lancheHora').value;
+    const lancheStatus = document.getElementById('lancheStatus').value;
+    const lancheDescricao = document.getElementById('lancheDescricao').value;
+  
+    const deslizeStatus = document.getElementById('deslizeStatus').value;
+    const deslizeTexto = document.getElementById('deslizeTexto').value;
+  
+    const humor = document.getElementById('humor').value;
+    const comentario = document.getElementById('comentario').value;
+    const objetivo = document.getElementById('objetivo').value;
+  
+    const resumo = `
+  📆 Data: ${data}
+  
+  🧃 Hidratação: ${agua} ${aguaStatus}
+  
+  🏃‍♂️ Exercício: ${exercicioStatus}
+  ${exercicio}
+  
+  📊 Resultado: ${resultado}
+  
+  🍽️ Alimentação:
+  - Café da manhã (${cafeHora}): ${cafeStatus} - ${cafeDescricao}
+  - Almoço (${almocoHora}): ${almocoStatus} - ${almocoDescricao}
+  - Jantar (${jantarHora}): ${jantarStatus} - ${jantarDescricao}
+  - Lanche (${lancheHora}): ${lancheStatus} - ${lancheDescricao}
+  
+  🔎 Fugiu da dieta? ${deslizeStatus}
+  ${deslizeTexto}
+  
+  🧠 Humor: ${humor}
+  
+  📣 Comentário do Dia:
+  ${comentario}
+  
+  🎯 Objetivo da Semana:
+  ${objetivo}
+  `;
+  
+    document.getElementById('resumo').textContent = resumo;
+  }
+  </script>
+  
   <script src="script.js"></script>
 </body>
 </html>
