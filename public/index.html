@@ -8,27 +8,81 @@
 </head>
 <body>
 
-<header>
-    <h1>Nosso Cantinho 💜🤍</h1>
-</header>
+    <!-- Área de Login - Inicialmente visível, o JS vai esconder quando logado -->
+    <div id="login-area">
+        <h2>Acesso ao Nosso Cantinho</h2>
+        <div>
+            <label for="emailInput">Email:</label><br>
+            <input type="email" id="emailInput" placeholder="seu.email@exemplo.com">
+        </div>
+        <div>
+            <label for="passwordInput">Senha:</label><br>
+            <input type="password" id="passwordInput" placeholder="Sua senha">
+        </div>
+        <button id="loginButton">Entrar</button>
+        <!-- Opcional: Adicionar um botão ou link para cadastro se quiser permitir criar contas pelo site -->
+        <!-- <button id="registerButton">Cadastrar</button> -->
+        <p>Use o email e senha que vocês cadastraram no Firebase.</p>
+    </div>
 
-<nav>
-    <a href="index.html">Início</a>
-    <a href="tempo.html">Tempo Juntos</a>
-    <a href="fotos.html">Fotos</a>
-    <a href="treinos.html">Treinos</a>
-    <a href="cartinhas.html">Cartinhas</a>
-    <a href="metas.html">Metas</a>
-</nav>
+    <!-- Botão de Sair - Inicialmente escondido, o JS vai mostrar quando logado -->
+    <button id="signOutBtn" style="display: none;">Sair</button>
 
-<main>
-    <h2>Bem-vindos ao nosso espaço! ✨</h2>
-    <p>Esse é um cantinho feito especialmente para nós dois. Aqui podemos acompanhar nosso tempo juntos, nossos treinos, guardar memórias, fotos, cartinhas e nossos sonhos. 💖</p>
-</main>
+    <!-- Conteúdo principal do site - Inicialmente escondido, o JS vai mostrar quando logado e autorizado -->
+    <div id="content" style="display: none;">
+        <p>Bem-vindo ao Nosso Cantinho! Você está logado.</p>
+        <!-- Aqui virá o conteúdo interativo que só aparece para vocês -->
 
-<audio id="audio" src="audio/musica.mp3" loop></audio>
-<button id="playPause" class="audio-button">🔊 Tocar Música</button>
+        <!-- MANTIDO O CONTEÚDO ORIGINAL DENTRO DO #content, POIS ELE SÓ APARECE QUANDO LOGADO -->
+        <header>
+            <h1>Nosso Cantinho 💜🤍</h1>
+        </header>
 
-<script src="script.js"></script>
+        <nav>
+            <a href="index.html">Início</a>
+            <!-- Certifique-se de que as outras páginas também implementam autenticação se necessário -->
+            <a href="tempo.html">Tempo Juntos</a>
+            <a href="fotos.html">Fotos</a>
+            <a href="treinos.html">Treinos</a>
+            <a href="cartinhas.html">Cartinhas</a>
+            <a href="metas.html">Metas</a>
+        </nav>
+
+        <main>
+            <h2>Bem-vindos ao nosso espaço! ✨</h2>
+            <p>Esse é um cantinho feito especialmente para nós dois. Aqui podemos acompanhar nosso tempo juntos, nossos treinos, guardar memórias, fotos, cartinhas e nossos sonhos. 💖</p>
+        </main>
+
+        <!-- Outros elementos que fazem parte do conteúdo logado, como o contador de dias, podem vir aqui -->
+        <!-- No seu script.js, o código do contador já está lá, só precisa garantir que ele rode quando o #content é mostrado -->
+        <div id="contador">Carregando tempo juntos...</div>
+
+
+        <!-- A seção de Resumo diário que você tinha no script pode ter os campos aqui dentro do #content -->
+        <!-- Exemplo BÁSICO dos inputs, você deve estilizar e organizar melhor -->
+        <section>
+            <h3>Check-in Diário</h3>
+            <div>
+                <label for="data">Data:</label>
+                <input type="date" id="data">
+            </div>
+             <!-- Adicionar todos os outros inputs do seu formulário de resumo aqui -->
+            <button onclick="gerarResumo()">Gerar Resumo (Salvar no Futuro)</button>
+            <pre id="resumo"></pre> <!-- Onde o resumo gerado aparece -->
+        </section>
+
+
+    </div> <!-- Fim da div #content -->
+
+    <!-- O áudio e o botão de controle podem ficar fora do #content se quiser que toque mesmo antes do login,
+         ou dentro se quiser que só toque para quem está logado. Deixei fora por enquanto. -->
+    <audio id="audio" src="audio/musica.mp3" loop></audio>
+    <button id="playPause" class="audio-button">🔊 Tocar Música</button>
+
+
+    <!-- SEU PRÓPRIO SCRIPT - AGORA CARREGADO COMO MÓDULO -->
+    <!-- Ele fará os imports dos SDKs do Firebase que precisa -->
+    <script type="module" src="script.js"></script>
+
 </body>
 </html>
