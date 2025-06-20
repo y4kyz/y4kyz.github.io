@@ -4,7 +4,7 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo 'Building static site... done!'"  // <<-- Adicione esta linha
+    "build": "echo 'Building static site... done!'"  
   },
   "repository": {
     "type": "git",
